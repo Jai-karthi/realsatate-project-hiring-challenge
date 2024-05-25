@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://127.0.0.1/signup").then(()=>{
+mongoose.connect("mongodb+srv://dbreal:dbreal@cluster0.yh3xco3.mongodb.net/signup").then(()=>{
     console.log('connected')
 }).catch(()=>{
     console.log('failed')

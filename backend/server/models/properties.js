@@ -1,14 +1,6 @@
 const mongoose = require('mongoose');
 
-// const properties = new mongoose.Schema({
-//     Place: { type: String, required: true },
-//     Area: { type: String, required: true },
-//     Bedrooms: { type: String, required: true},
-//     Bathrooms: { type: String, required: true },
-//     Nearby: { type: String, required: true },
-    
 
-//   });
 
 const properties  = new mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' },
