@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        await axios.post('https://post-apis.onrender.comapp.post', loginData)
+        await axios.post('https://realsatate-project-hiring-challenge.onrender.com/', loginData)
       .then(res=>{
         if (res.data === 'exists'){
           history('/PropertyPostingForm')

@@ -28,6 +28,7 @@ app.post("/", async (req, res) => {
         const check = await Users.findOne({ email: req.body.email }); 
         if (check) {
             res.json('exists');
+        
         } else {
             res.json('notexists');
         }
@@ -81,8 +82,7 @@ app.post("/properties", async (req, res) => {
     try {
         await newProperty.save();
         res.json('created');
-  
-        res.json( newProperty )
+        res.json(newProperty)
     } catch (e) {
         res.status(500).json('error');
     }
