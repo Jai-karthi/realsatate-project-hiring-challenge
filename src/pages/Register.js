@@ -25,7 +25,7 @@ export default function Register() {
     try {
       await axios.post('http://localhost:4000/signup', user)
       .then(res=>{
-      
+        // http://localhost:4000/signup
         if (res.data === 'exists'){
           alert('User  already exit please login ')
         
