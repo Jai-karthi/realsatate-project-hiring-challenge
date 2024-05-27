@@ -25,7 +25,7 @@ const handleChange = (e) => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        await axios.post('http://localhost:4000/properties', property);
+        await axios.post('https://realsatate-project-hiring-challenge-pwog.vercel.app/properties', property);
         alert('Property posted successfully!');
         // Optionally, redirect the user to their dashboard or property listing page
     } catch (error) {
