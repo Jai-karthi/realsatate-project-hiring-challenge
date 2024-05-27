@@ -8,14 +8,12 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-require('./server/db/connection');
 
 const Users = require('./server/models/users'); // Ensure the path is correct
 const properties = require('./server/models/properties');
 
 const mongoose = require('mongoose');
-
-mongoose.connect("mongodb+srv://dbreal:dbreal@cluster0.yh3xco3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
+ mongoose.connect("mongodb+srv://dbreal:dbreal@cluster0.yh3xco3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/signup").then(()=>{
     console.log('connected')
 }).catch((e)=>{
     console.log('failed')
