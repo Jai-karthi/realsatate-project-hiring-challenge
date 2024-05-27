@@ -8,10 +8,20 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-require('./db/connection');
+require('./server/db/connection');
 
-const Users = require('./models/users'); // Ensure the path is correct
-const properties = require('./models/properties');
+const Users = require('./server/models/users'); // Ensure the path is correct
+const properties = require('./server/models/properties');
+
+const mongoose = require('mongoose');
+
+mongoose.connect("mongodb+srv://dbreal:dbreal@cluster0.yh3xco3.mongodb.net/signup").then(()=>{
+    console.log('connected')
+}).catch((e)=>{
+    console.log('failed')
+    console.log(e)
+})
+
 
 app.use((req, res, next) => {
     req.user = { id: '60d21b4667d0d8992e610c85' }; // Replace with actual user ID from authentication
