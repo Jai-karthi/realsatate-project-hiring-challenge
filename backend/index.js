@@ -13,7 +13,7 @@ const Users = require('./server/models/users'); // Ensure the path is correct
 const properties = require('./server/models/properties');
 
 const mongoose = require('mongoose');
- mongoose.connect("mongodb+srv://dbreal:dbreal@cluster0.yh3xco3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/signup").then(()=>{
+ mongoose.connect("mongodb+srv://dbreal:dbreal@cluster0.yh3xco3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log('connected')
 }).catch((e)=>{
     console.log('failed')
