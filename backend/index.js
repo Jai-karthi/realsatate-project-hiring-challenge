@@ -1,11 +1,7 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
 const router = express.Router();
-
-
 app.use(express.json());
-app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 const Users = require('./server/models/users'); // Ensure the path is correct
