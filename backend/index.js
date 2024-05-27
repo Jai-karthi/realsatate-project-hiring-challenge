@@ -8,7 +8,7 @@ const Users = require('./server/models/users'); // Ensure the path is correct
 const properties = require('./server/models/properties');
 
 const mongoose = require('mongoose');
- mongoose.connect("mongodb+srv://dbreal:dbreal@cluster0.yh3xco3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
+ mongoose.connect("mongodb+srv://dbreal:dbreal@cluster0.yh3xco3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/signup").then(()=>{
     console.log('connected')
 }).catch((e)=>{
     console.log('failed')
@@ -22,6 +22,8 @@ app.use((req, res, next) => {
 });
 
 app.post("/", async (req, res) => {
+ 
+
     try {
         const check = await Users.findOne({ email: req.body.email }); 
         if (check) {
@@ -36,7 +38,7 @@ app.post("/", async (req, res) => {
 
 app.post("/signup", async (req, res) => {
     const { email, password, firstName, lastName, phoneNumber } =  req.body;
-
+  
     try {
         const existingUser = await Users.findOne({ email: email });
 
@@ -53,8 +55,10 @@ app.post("/signup", async (req, res) => {
 
             await newUser.save();
             res.json('created');
+            res.json(newUser)
         }
     } catch (e) {
+        console.log(req.body)
         res.status(500).json('error');
     }
 });
@@ -77,6 +81,8 @@ app.post("/properties", async (req, res) => {
     try {
         await newProperty.save();
         res.json('created');
+  
+        res.json( newProperty )
     } catch (e) {
         res.status(500).json('error');
     }
@@ -107,6 +113,7 @@ app.post('/properties/like', async (req, res) => {
         property.likes += 1;
         property.save();
         res.json({ message: 'Property liked successfully' });
+        res.json(newProperty) 
     } catch (error) {
         res.status(500).json({ error: 'Failed to like property' });
     }

@@ -11,7 +11,7 @@ export default function Component() {
   useEffect(() => {
       async function fetchPostedProperties() {
           try {
-              const response = await axios.get('http://localhost:4000/properties/user');
+              const response = await axios.get('https://post-apis.onrender.comapp.post/properties/user');
               setPostedProperties(response.data);
           } catch (error) {
               console.error(error);
