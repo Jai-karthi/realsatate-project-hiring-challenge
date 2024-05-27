@@ -8,13 +8,6 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors(
-    {
-        orgin:["https://realsatate-project-hiring-challenge-pwog.vercel.app"],
-        methods:["Post","GET"],
-        credentials:true
-    }
-))
 const Users = require('./server/models/users'); // Ensure the path is correct
 const properties = require('./server/models/properties');
 

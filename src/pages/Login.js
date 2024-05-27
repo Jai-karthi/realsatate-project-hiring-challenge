@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        await axios.post('https://realsatate-project-hiring-challenge-pwog.vercel.app/', loginData)
+        await axios.post('http://localhost:4000', loginData)
       .then(res=>{
         if (res.data === 'exists'){
           history('/PropertyPostingForm')

@@ -6,7 +6,7 @@ import { Button } from "./Button";
 function Propertylist({property_id,propertyPlace,propertyArea,propertyBathrooms,propertyNearby,  Fullname ,propertylikes,Bedrooms ,sqft,price}) {
   const handleLike = (Fullname) => {
     try {
-       axios.post('https://realsatate-project-hiring-challenge-pwog.vercel.app/properties/like',Fullname);
+       axios.post('http://localhost:4000/properties/like',Fullname);
         alert('You liked this property!');
         // Optionally, update the UI to reflect the liked status
     } catch (error) {

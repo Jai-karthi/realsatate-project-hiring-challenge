@@ -23,7 +23,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://realsatate-project-hiring-challenge-pwog.vercel.app/signup', user)
+      await axios.post('http://localhost:4000/signup', user)
       .then(res=>{
         // http://localhost:4000/signup
         if (res.data === 'exists'){
