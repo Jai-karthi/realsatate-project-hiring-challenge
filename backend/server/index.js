@@ -8,10 +8,10 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-require('./server/db/connection');
+require('./db/connection');
 
-const Users = require('./server/models/users'); // Ensure the path is correct
-const properties = require('./server/models/properties');
+const Users = require('./models/users'); // Ensure the path is correct
+const properties = require('./models/properties');
 
 app.use((req, res, next) => {
     req.user = { id: '60d21b4667d0d8992e610c85' }; // Replace with actual user ID from authentication
