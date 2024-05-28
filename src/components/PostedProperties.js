@@ -11,7 +11,7 @@ export default function Component() {
   useEffect(() => {
       async function fetchPostedProperties() {
           try {
-              const response = await axios.get('https://realsatate-project-hiring-challenge.onrender.com/properties/user');
+              const response = await axios.get('https://realsatate-project-hiring-challenge-ndsv.vercel.app/properties/user');
               setPostedProperties(response.data);
           } catch (error) {
               console.error(error);
